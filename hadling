@@ -1,0 +1,24 @@
+def check_age():
+    try:
+        user_input = input("Please enter your age: ").strip()
+        
+        if not user_input:
+            print("Error: You didn't enter anything. Please enter a value.")
+            return
+        age = int(user_input)
+
+        if age < 0 or age > 120:
+            print(f"Error: {age} is not a valid age. It must be between 0 and 120.")
+            return
+        
+        print(f"Success: {age} is a valid age!")
+
+        if age % 2 == 0:
+            print(f"The age {age} is an EVEN number.")
+        else:
+            print(f"The age {age} is an ODD number.")
+
+    except ValueError:
+        print("Error: Invalid input. Please enter a whole numeric value (e.g., 25).")
+
+check_age()
